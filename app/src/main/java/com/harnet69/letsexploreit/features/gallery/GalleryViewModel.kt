@@ -1,13 +1,13 @@
-package com.example.letsexploreit.ui.exploringMap
+package com.harnet69.letsexploreit.features.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ExploringMapViewModel : ViewModel() {
+class GalleryViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is Exploring map Fragment"
+        value = "This is gallery Fragment"
     }
     val text: LiveData<String> = _text
 }
