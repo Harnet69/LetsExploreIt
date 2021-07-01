@@ -11,6 +11,7 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.material.snackbar.Snackbar
 import com.harnet69.letsexploreit.R
 import com.harnet69.letsexploreit.databinding.ExploringMapBinding
 
@@ -35,6 +36,13 @@ class ExploringMapFragment : Fragment() {
         mapFragment?.getMapAsync(callback)
 
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.fabAddPOI.setOnClickListener { fab ->
+            Snackbar.make(view, "Add a new POI", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
     }
 
     override fun onDestroyView() {

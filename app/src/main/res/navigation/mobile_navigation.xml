@@ -12,14 +12,14 @@
         tools:layout="@layout/exploring_map" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.harnet69.letsexploreit.features.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_group"
+        android:name="com.harnet69.letsexploreit.features.group.GroupFragment"
+        android:label="@string/menu_group"
+        tools:layout="@layout/fragment_group" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.harnet69.letsexploreit.features.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_history"
+        android:name="com.harnet69.letsexploreit.features.history.HistoryFragment"
+        android:label="@string/menu_history"
+        tools:layout="@layout/fragment_history" />
 </navigation>
