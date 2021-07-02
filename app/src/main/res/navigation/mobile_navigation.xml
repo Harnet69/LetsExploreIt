@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_exploring_map">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_exploring_map"
         android:name="com.harnet69.letsexploreit.features.exploringMap.ExploringMapFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/exploring_map" />

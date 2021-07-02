@@ -7,16 +7,15 @@ import android.view.Menu
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.harnet69.letsexploreit.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.snackbar.Snackbar
+import com.harnet69.letsexploreit.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             val permMsg = if (isGranted) "Permission granted" else "Permission denied"
             Snackbar.make(binding.navView, permMsg, Snackbar.LENGTH_SHORT).show()
+            //TODO implement  map fragment refresh
+            if (isGranted) {
+                finish()
+                startActivity(intent)
+            }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.nav_home, R.id.nav_group, R.id.nav_history
+                R.id.nav_exploring_map, R.id.nav_group, R.id.nav_history
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
