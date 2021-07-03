@@ -2,10 +2,10 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    // Google Maps secrets-gradle-plugin key
-    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
     id 'androidx.navigation.safeargs.kotlin'
     id 'dagger.hilt.android.plugin'
+    // Google Maps secrets-gradle-plugin key
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
