@@ -28,7 +28,7 @@ class GroupFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            binding.fabAddMember.setOnClickListener { fab ->
+            binding.fabAddMember.setOnClickListener {
                 groupViewModel.addNewMember()
                 Snackbar.make(view, "Add a new groups member", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
