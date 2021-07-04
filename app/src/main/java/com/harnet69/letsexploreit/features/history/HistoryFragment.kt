@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.harnet69.letsexploreit.databinding.FragmentHistoryBinding
+import javax.inject.Inject
 
-class HistoryFragment : Fragment() {
+class HistoryFragment @Inject constructor() : Fragment() {
 
     private lateinit var historyViewModel: HistoryViewModel
     private var _binding: FragmentHistoryBinding? = null

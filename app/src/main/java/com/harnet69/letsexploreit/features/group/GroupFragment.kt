@@ -9,8 +9,9 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
 import com.harnet69.letsexploreit.databinding.FragmentGroupBinding
+import javax.inject.Inject
 
-class GroupFragment : Fragment() {
+class GroupFragment @Inject constructor() : Fragment() {
 
     private val groupViewModel: GroupViewModel by viewModels()
     private var _binding: FragmentGroupBinding? = null

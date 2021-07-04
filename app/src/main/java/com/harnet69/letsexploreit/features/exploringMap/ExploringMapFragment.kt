@@ -22,9 +22,10 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.maps.android.ktx.awaitMap
 import com.harnet69.letsexploreit.R
 import com.harnet69.letsexploreit.databinding.ExploringMapBinding
+import javax.inject.Inject
 
 
-class ExploringMapFragment : Fragment() {
+class ExploringMapFragment @Inject constructor() : Fragment() {
 
     private lateinit var homeViewModel: ExploringMapViewModel
     private var _binding: ExploringMapBinding? = null
