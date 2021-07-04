@@ -1,10 +1,10 @@
-package com.harnet69.letsexploreit.data
+package com.harnet69.letsexploreit.data.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "explorers")
-data class Explorer(
+data class GroupMember(
     val name: String,
     val userName: String,
     val password: String,

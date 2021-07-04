@@ -4,6 +4,8 @@ import android.content.Context
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.harnet69.letsexploreit.R
+import com.harnet69.letsexploreit.features.group.repository.GroupRepository
+import com.harnet69.letsexploreit.features.group.repository.IGroupRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +16,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object AppModule {
+
+    @Singleton
+    @Provides
+    fun injectGroupRepository() = GroupRepository() as IGroupRepository
+
     @Singleton
     @Provides
     fun injectGlide(@ApplicationContext context: Context) = Glide.with(context)

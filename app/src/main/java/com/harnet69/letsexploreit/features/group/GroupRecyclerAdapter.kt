@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.RequestManager
 import com.harnet69.letsexploreit.R
-import com.harnet69.letsexploreit.data.Explorer
+import com.harnet69.letsexploreit.data.model.GroupMember
 import javax.inject.Inject
 
 class GroupRecyclerAdapter @Inject constructor(
@@ -19,19 +19,19 @@ class GroupRecyclerAdapter @Inject constructor(
 
     // More efficient way!!! calculates the difference between two lists and outputs a list of update operations that
     // converts the first list into the second one
-    private val diffUtil = object : DiffUtil.ItemCallback<Explorer>() {
-        override fun areItemsTheSame(oldItem: Explorer, newItem: Explorer): Boolean {
+    private val diffUtil = object : DiffUtil.ItemCallback<GroupMember>() {
+        override fun areItemsTheSame(oldItem: GroupMember, newItem: GroupMember): Boolean {
             return oldItem == newItem
         }
 
-        override fun areContentsTheSame(oldItem: Explorer, newItem: Explorer): Boolean {
+        override fun areContentsTheSame(oldItem: GroupMember, newItem: GroupMember): Boolean {
             return oldItem == newItem
         }
     }
 
     private val recyclerViewDiffer = AsyncListDiffer(this, diffUtil)
 
-    var groupMembers: List<Explorer>
+    var groupGroupMembers: List<GroupMember>
         get() = recyclerViewDiffer.currentList
         set(value) = recyclerViewDiffer.submitList(value)
 
@@ -46,7 +46,7 @@ class GroupRecyclerAdapter @Inject constructor(
         val groupMemberImg = holder.itemView.findViewById<ImageView>(R.id.groupMemberImgUrl)
         val groupMemberName = holder.itemView.findViewById<TextView>(R.id.groupMemberName)
 
-        val groupMember = groupMembers[position]
+        val groupMember = groupGroupMembers[position]
         holder.itemView.apply {
             groupMemberName.text = "Name: ${groupMember.name}"
             glide.load(groupMember.profileImgUrl).into(groupMemberImg)
@@ -54,7 +54,7 @@ class GroupRecyclerAdapter @Inject constructor(
     }
 
     override fun getItemCount(): Int {
-        return groupMembers.size
+        return groupGroupMembers.size
     }
 
     class GroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

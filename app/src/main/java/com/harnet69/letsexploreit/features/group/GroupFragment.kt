@@ -1,6 +1,7 @@
 package com.harnet69.letsexploreit.features.group
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,9 +13,10 @@ import com.harnet69.letsexploreit.R
 import com.harnet69.letsexploreit.databinding.FragmentGroupBinding
 import javax.inject.Inject
 
-class GroupFragment @Inject constructor() : Fragment(R.layout.fragment_group) {
-
-    private val groupViewModel: GroupViewModel by viewModels()
+class GroupFragment @Inject constructor(
+    val groupRecyclerAdapter: GroupRecyclerAdapter
+) : Fragment(R.layout.fragment_group) {
+    private lateinit var groupViewModel: GroupViewModel
     private var _binding: FragmentGroupBinding? = null
 
     private val binding get() = _binding!!
@@ -30,11 +32,15 @@ class GroupFragment @Inject constructor() : Fragment(R.layout.fragment_group) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-            binding.fabAddMember.setOnClickListener {
-                groupViewModel.addNewMember()
-                Snackbar.make(view, "Add a new groups member", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-            }
+        groupViewModel = ViewModelProvider(requireActivity()).get(GroupViewModel::class.java)
+
+        binding.fabAddMember.setOnClickListener {
+            groupViewModel.addNewMember()
+            Snackbar.make(view, "Add a new groups member", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show()
+        }
+
+        Log.i("fakeGroupMember", "onViewCreated: ${groupViewModel.groupMembers.value}")
     }
 
     override fun onDestroyView() {
