@@ -10,4 +10,6 @@
     <string name="menu_home">Exploring map</string>
     <string name="menu_group">My Group</string>
     <string name="menu_history">Exploring history</string>
+    <string name="profile_image">Profile image</string>
+    <string name="name">Name</string>
 </resources>

@@ -22,4 +22,11 @@
     <style name="Theme.LetsExploreIt.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.LetsExploreIt.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Standard art item -->
+    <style name="StandardItemRow">
+        <item name="android:layout_margin">@dimen/item_margin</item>
+        <item name="android:textSize">@dimen/item_row_text_size</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
 </resources>

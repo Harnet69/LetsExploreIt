@@ -21,14 +21,14 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.snackbar.Snackbar
 import com.google.maps.android.ktx.awaitMap
 import com.harnet69.letsexploreit.R
-import com.harnet69.letsexploreit.databinding.ExploringMapBinding
+import com.harnet69.letsexploreit.databinding.FragmentExploringMapBinding
 import javax.inject.Inject
 
 
-class ExploringMapFragment @Inject constructor() : Fragment() {
+class ExploringMapFragment @Inject constructor() : Fragment(R.layout.fragment_exploring_map) {
 
     private lateinit var homeViewModel: ExploringMapViewModel
-    private var _binding: ExploringMapBinding? = null
+    private var _binding: FragmentExploringMapBinding? = null
     private val binding get() = _binding!!
 
     var myPosition: LatLng? = null
@@ -41,7 +41,7 @@ class ExploringMapFragment @Inject constructor() : Fragment() {
     ): View {
         homeViewModel = ViewModelProvider(this).get(ExploringMapViewModel::class.java)
 
-        _binding = ExploringMapBinding.inflate(inflater, container, false)
+        _binding = FragmentExploringMapBinding.inflate(inflater, container, false)
 
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
 

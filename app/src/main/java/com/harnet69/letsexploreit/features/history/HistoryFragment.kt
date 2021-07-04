@@ -6,10 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.harnet69.letsexploreit.R
 import com.harnet69.letsexploreit.databinding.FragmentHistoryBinding
 import javax.inject.Inject
 
-class HistoryFragment @Inject constructor() : Fragment() {
+class HistoryFragment @Inject constructor() : Fragment(R.layout.fragment_history) {
 
     private lateinit var historyViewModel: HistoryViewModel
     private var _binding: FragmentHistoryBinding? = null
