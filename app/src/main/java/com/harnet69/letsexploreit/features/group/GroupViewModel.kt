@@ -1,13 +1,13 @@
 package com.harnet69.letsexploreit.features.group
 
 import android.util.Log
-import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.harnet69.letsexploreit.features.group.repository.IGroupRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class GroupViewModel @ViewModelInject constructor(
+@HiltViewModel
+class GroupViewModel @Inject constructor(
     // in tests we fake this repository
     //TODO here is the problem with injection!!!
     private val repository: IGroupRepository
