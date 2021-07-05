@@ -31,7 +31,7 @@ class GroupRecyclerAdapter @Inject constructor(
 
     private val recyclerViewDiffer = AsyncListDiffer(this, diffUtil)
 
-    var groupGroupMembers: List<GroupMember>
+    var groupMembers: List<GroupMember>
         get() = recyclerViewDiffer.currentList
         set(value) = recyclerViewDiffer.submitList(value)
 
@@ -46,7 +46,7 @@ class GroupRecyclerAdapter @Inject constructor(
         val groupMemberImg = holder.itemView.findViewById<ImageView>(R.id.groupMemberImgUrl)
         val groupMemberName = holder.itemView.findViewById<TextView>(R.id.groupMemberName)
 
-        val groupMember = groupGroupMembers[position]
+        val groupMember = groupMembers[position]
         holder.itemView.apply {
             groupMemberName.text = "Name: ${groupMember.name}"
             glide.load(groupMember.profileImgUrl).into(groupMemberImg)
@@ -54,7 +54,7 @@ class GroupRecyclerAdapter @Inject constructor(
     }
 
     override fun getItemCount(): Int {
-        return groupGroupMembers.size
+        return groupMembers.size
     }
 
     class GroupViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

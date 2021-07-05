@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.harnet69.letsexploreit.R
 import com.harnet69.letsexploreit.databinding.FragmentGroupBinding
@@ -40,7 +40,16 @@ class GroupFragment @Inject constructor(
                 .setAction("Action", null).show()
         }
 
-        Log.i("fakeGroupMember", "onViewCreated: ${groupViewModel.groupMembers.value}")
+        _binding?.groupMembersRecyclerView?.adapter = groupRecyclerAdapter
+        _binding?.groupMembersRecyclerView?.layoutManager = LinearLayoutManager(requireContext())
+
+        observeVIewModel()
+    }
+
+    private fun observeVIewModel(){
+        groupViewModel.groupMembers.observe(viewLifecycleOwner, { newGroupMembers ->
+            groupRecyclerAdapter.groupMembers = newGroupMembers
+        })
     }
 
     override fun onDestroyView() {
