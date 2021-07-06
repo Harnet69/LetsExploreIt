@@ -2,6 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="groupMember"
+            type="com.harnet69.letsexploreit.data.model.GroupMember" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +20,8 @@
             android:layout_height="100dp"
             android:layout_weight="1"
             android:scaleType="centerCrop"
-            android:contentDescription="@string/profile_image" />
+            android:contentDescription="@string/profile_image"
+            android:bindImageUrl="@{groupMember.profileImgUrl}"/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="0dp"
@@ -27,8 +34,8 @@
                 style="@style/StandardItemRow"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/name"
                 android:textSize="@dimen/art_name_text_size"
+                android:text="@{groupMember.name}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

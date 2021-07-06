@@ -7,11 +7,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class GroupViewModel @Inject constructor(
-    // in tests we fake this repository
-    //TODO here is the problem with injection!!!
-    private val repository: IGroupRepository
-) : ViewModel() {
+class GroupViewModel @Inject constructor(repository: IGroupRepository) : ViewModel() {
     val groupMembers = repository.getAllGroupMembers()
 
     fun addNewMember() {

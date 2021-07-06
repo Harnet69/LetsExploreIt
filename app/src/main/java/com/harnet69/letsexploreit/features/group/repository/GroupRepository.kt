@@ -20,7 +20,7 @@ class GroupRepository : IGroupRepository {
                 "Member 1",
                 "member1",
                 "12345",
-                "https://visualpharm.com/assets/30/User-595b40b85ba036ed117da56f.svg",
+                "https://www.clipartmax.com/png/middle/296-2969961_no-image-user-profile-icon.png",
                 1
             )
         )
@@ -29,7 +29,7 @@ class GroupRepository : IGroupRepository {
                 "Member 2",
                 "member2",
                 "12345",
-                "https://visualpharm.com/assets/622/Contact%20Info-595b40b65ba036ed117d36d5.svg",
+                "https://www.clipartmax.com/png/middle/162-1623921_stewardess-510x510-user-profile-icon-png.png",
                 2
             )
         )
