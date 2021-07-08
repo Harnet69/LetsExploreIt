@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import com.harnet69.letsexploreit.data.model.GroupMember
 
 interface IGroupRepository {
+    fun isInGroup(): LiveData<Boolean>
     fun createNewGroup()
     fun deleteGroup()
 

@@ -5,6 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import com.harnet69.letsexploreit.data.model.GroupMember
 
 class GroupRepository : IGroupRepository {
+    override fun isInGroup(): LiveData<Boolean> {
+        return MutableLiveData<Boolean>(false)
+    }
+
     override fun createNewGroup() {
         TODO("Not yet implemented")
     }
@@ -33,8 +37,7 @@ class GroupRepository : IGroupRepository {
                 2
             )
         )
-        val fakeMembersLiveData = MutableLiveData<List<GroupMember>>(fakeMembers)
-        return fakeMembersLiveData
+        return MutableLiveData(fakeMembers)
     }
 
     override fun addNewGroupMember() {

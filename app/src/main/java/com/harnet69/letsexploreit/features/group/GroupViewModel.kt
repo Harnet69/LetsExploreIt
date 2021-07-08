@@ -10,6 +10,9 @@ import javax.inject.Inject
 class GroupViewModel @Inject constructor(repository: IGroupRepository) : ViewModel() {
     val groupMembers = repository.getAllGroupMembers()
 
+    // is user in any group
+    val isInGroup = repository.isInGroup()
+
     fun addNewMember() {
         Log.i("groupModelView", "addNewMember: ")
     }

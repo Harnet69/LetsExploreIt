@@ -15,15 +15,16 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.coroutineScope
+import androidx.navigation.Navigation
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.material.snackbar.Snackbar
 import com.google.maps.android.ktx.awaitMap
+import com.harnet69.letsexploreit.MainActivity
 import com.harnet69.letsexploreit.R
 import com.harnet69.letsexploreit.databinding.FragmentExploringMapBinding
 import javax.inject.Inject
-
 
 class ExploringMapFragment @Inject constructor() : Fragment(R.layout.fragment_exploring_map) {
 
@@ -71,8 +72,7 @@ class ExploringMapFragment @Inject constructor() : Fragment(R.layout.fragment_ex
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.fabAddPOI.setOnClickListener { fab ->
-            Snackbar.make(view, "Add a new POI", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show()
+            Navigation.findNavController(fab).navigate(ExploringMapFragmentDirections.actionNavExploringMapToNavGroup())
         }
     }
 
